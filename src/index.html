@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Js | Todo App</title>
+  </head>
+  <body>
+    <header>
+        <h1>Javascript Todo List</h1>
+        <form action="#">
+            <input
+                 type="text"
+                 id="newTodoField"
+                 class="inputField"
+                 placeholder="Add your todo...">
+                 <button type="submit" class="todoBtn" id="addTodoBtn">Add Todo</button>
+        </form>
+    </header>
+
+    <main>
+        <section class="todoList">
+            <h2>Todo List</h2>
+            <div class="todos">
+                <div class="todo">
+                    <div class="content">
+                        <input type="text" id="todoContent">
+                    </div>
+                    <div class="actions">
+                        <button type="submit" id="editButton">Edit</button>
+                        <button type="submit" id="deleteButton">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
