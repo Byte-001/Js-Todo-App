@@ -4,7 +4,7 @@ const todoButton = document.querySelector(".todoBtn");
 const todoContainer = document.querySelector(".todos");
 const form = document.getElementById("todoForm");
 
-form.addEventListener("load", (event) => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
 });
 
