@@ -17,6 +17,7 @@ function getTodoInput() {
     window.alert("Lutfen bir todo giriniz...");
   } else {
     createTodo(todo);
+    todo = "";
   }
 }
 
