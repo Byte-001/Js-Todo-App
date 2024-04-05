@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+/* Color Variables */
 :root{
     --dark: #373737;
     --purple: #86469C;
@@ -17,6 +19,7 @@ html{
     font-size: 62.5%;
 }
 
+/* general body style */
 body{
     display: flex;
     flex-direction: column;
@@ -27,6 +30,7 @@ body{
     color: #fff;
 }
 
+/* header style */
 header{
     max-width: 800px;
     padding: 2rem 1rem;
@@ -36,7 +40,7 @@ header{
 
 header h1{
     font-size: 2.5rem;
-    font-weight: 300;
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
@@ -62,8 +66,8 @@ input, button{
 }
 
 .inputField::placeholder{
-    color: #fff;
-    font-size: 2rem;
+    color: var(--dark);
+    font-size: 1.5rem;
 }
 
 .todoBtn{
@@ -83,5 +87,74 @@ input, button{
 }
 
 .todoBtn:active{
+    opacity: 0.6;
+}
+
+/* main content style */
+main{
+    flex: 1 1 0%;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.todoList{
+    padding: 1rem;
+}
+
+.todoList h2{
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.todos > .todo{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--grey);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.todos > .todo > .content > #todoContent{
+    color: #fff;
+    font-size: 2rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+
+.todos > .todo > .actions{
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+.todo > .actions button{
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0.5rem;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.actions > #editButton{
+    background-image: linear-gradient(to right, var(--purple), var(--red));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.actions > #deleteButton{
+     color: var(--red);
+}
+
+.todo > .actions > button:hover{
+    opacity: 0.8;
+}
+
+.todo > .actions > button:active{
     opacity: 0.6;
 }
