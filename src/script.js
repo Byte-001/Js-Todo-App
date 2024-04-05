@@ -38,12 +38,12 @@ function createTodo(todo){
     actionsDiv.className = 'actions';
 
     const editBtn = document.createElement('button');
-    editBtn.setAttribute("type", "submit");
+    editBtn.setAttribute("type", "button");
     editBtn.id = "editButton";
     editBtn.innerHTML = "edit";
     
     const deleteBtn = document.createElement('button');
-    deleteBtn.setAttribute("type", "submit");
+    deleteBtn.setAttribute("type", "button");
     deleteBtn.id = "deleteButton";
     deleteBtn.innerHTML = "delete";
 
