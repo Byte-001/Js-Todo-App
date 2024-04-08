@@ -1,17 +1,15 @@
-//* dom elements
-const todoInput = document.getElementById("newTodoField");
-const todoButton = document.querySelector(".todoBtn");
-const todoContainer = document.querySelector(".todos");
-const form = document.getElementById("todoForm");
+  //* dom elements
+  const todoInput = document.getElementById("newTodoField");
+  const todoButton = document.querySelector(".todoBtn");
+  const todoContainer = document.querySelector(".todos");
+  const form = document.getElementById("todoForm");
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-});
-
-todoButton.addEventListener("click", getTodoInput);
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+  });
 
 //* get todo function
-function getTodoInput() {
+todoButton.addEventListener("click", () => {
   let todo = todoInput.value;
   if (todo === null || todo === "") {
     window.alert("Lutfen bir todo giriniz...");
@@ -19,7 +17,7 @@ function getTodoInput() {
     createTodo(todo);
     todoInput.value = "";
   }
-}
+});
 
 //* create todo function
 function createTodo(todo) {
