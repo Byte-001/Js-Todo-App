@@ -13,46 +13,59 @@ todoButton.addEventListener("click", getTodoInput);
 //* get todo function
 function getTodoInput() {
   let todo = todoInput.value;
-  if (todo === "") {
+  if (todo === null || todo === "") {
     window.alert("Lutfen bir todo giriniz...");
   } else {
     createTodo(todo);
-    todoInput.value = ""; 
+    todoInput.value = "";
   }
 }
 
 //* create todo function
-function createTodo(todo){
-    const todoDiv = document.createElement('div');
-    todoDiv.className = 'todo';
+function createTodo(todo) {
+  const todoDiv = document.createElement("div");
+  todoDiv.className = "todo";
 
-    const content = document.createElement('div');
-    content.className = 'content';
+  const content = document.createElement("div");
+  content.className = "content";
 
-    const todoText = document.createElement('input');
-    todoText.id = 'todoContent';
-    todoText.setAttribute("type", "text");
-    todoText.readOnly = true;
-    
-    const actionsDiv = document.createElement('div');
-    actionsDiv.className = 'actions';
+  const todoText = document.createElement("input");
+  todoText.id = "todoContent";
+  todoText.setAttribute("type", "text");
+  todoText.readOnly = true;
 
-    const editBtn = document.createElement('button');
-    editBtn.setAttribute("type", "button");
-    editBtn.id = "editButton";
-    editBtn.innerHTML = "edit";
-    
-    const deleteBtn = document.createElement('button');
-    deleteBtn.setAttribute("type", "button");
-    deleteBtn.id = "deleteButton";
-    deleteBtn.innerHTML = "delete";
+  const actionsDiv = document.createElement("div");
+  actionsDiv.className = "actions";
 
-    todoContainer.appendChild(todoDiv);
-    todoDiv.appendChild(content);
-    content.appendChild(todoText);
-    todoDiv.appendChild(actionsDiv);
-    actionsDiv.appendChild(editBtn);
-    actionsDiv.appendChild(deleteBtn);
+  const editBtn = document.createElement("button");
+  editBtn.setAttribute("type", "button");
+  editBtn.id = "editButton";
+  editBtn.innerHTML = "edit";
+  editBtn.addEventListener("click", () => {
+    if (editBtn.innerText.toLowerCase() == "edit") {
+      todoText.readOnly = false;
+      todoText.focus();
+      editBtn.innerText = "Save";
+    } else {
+      todoText.readOnly = true;
+      editBtn.innerText = "EDIT";
+    }
+  });
 
-    todoText.value = todo;
+  const deleteBtn = document.createElement("button");
+  deleteBtn.setAttribute("type", "button");
+  deleteBtn.id = "deleteButton";
+  deleteBtn.innerHTML = "delete";
+  deleteBtn.addEventListener("click", () => {
+    todoContainer.removeChild(todoDiv);
+  });
+
+  todoContainer.appendChild(todoDiv);
+  todoDiv.appendChild(content);
+  content.appendChild(todoText);
+  todoDiv.appendChild(actionsDiv);
+  actionsDiv.appendChild(editBtn);
+  actionsDiv.appendChild(deleteBtn);
+
+  todoText.value = todo;
 }
